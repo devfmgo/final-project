@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from '../components/Sidebar';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 export const LayoutsAdmin = (props) => {
   let { name, image_url } = JSON.parse(Cookies.get('user'));
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ export const LayoutsAdmin = (props) => {
           <div className="p-4">{props.children}</div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
