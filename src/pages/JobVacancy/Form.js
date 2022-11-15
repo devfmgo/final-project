@@ -41,7 +41,7 @@ const CreateJob = () => {
         })
         .catch((err) => {});
     }
-    setCurrentId(id);
+    // setCurrentId(id);
   }, [fetchStatus, setFetchStatus]);
 
   return (
