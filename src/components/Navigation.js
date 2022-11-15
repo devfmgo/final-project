@@ -38,7 +38,7 @@ const Navigation = () => {
           </Navbar.Brand>
           <div className="flex md:order-2">
             {!Cookies.get(`token`) && (
-              <div className="md:flex space-x-4">
+              <div className="hidden md:flex space-x-4">
                 <Link
                   to="/login"
                   className="flex p-3 rounded-md bg-teal-200 text-teal-800 font-semibold text-sm items-center"
@@ -96,6 +96,32 @@ const Navigation = () => {
                 Job Vacancy
               </Link>
             </li>
+            {!Cookies.get(`token`) && (
+              <div className=" relative block md:hidden space-y-2  text-center">
+                <Link
+                  to="/login"
+                  className="flex p-3 rounded-md bg-teal-200 text-teal-800 font-semibold text-sm items-center"
+                >
+                  Sign In
+                </Link>
+
+                <Link
+                  to="/register"
+                  className="flex p-3 rounded-md bg-teal-700 text-gray-100 font-semibold text-sm items-center"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            )}
+            {Cookies.get(`token`) && (
+              <li
+                onClick={handleLogOut}
+                to="/login"
+                className="flex p-3 rounded-md bg-red-200 text-red-800 font-semibold text-md items-center cursor-pointer"
+              >
+                Log Out
+              </li>
+            )}
           </Navbar.Collapse>
         </div>
       </Navbar>
