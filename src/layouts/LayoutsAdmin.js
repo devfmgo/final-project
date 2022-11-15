@@ -9,7 +9,7 @@ export const LayoutsAdmin = (props) => {
   const handleLogOut = () => {
     Cookies.remove(`token`);
     Cookies.remove(`user`);
-    navigate('/login');
+    navigate('/');
   };
   return (
     <>
