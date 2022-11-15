@@ -5,14 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import GlobalContext from '../../context/GlobalContext';
 const CreateJob = () => {
   const { state, handleFunction } = useContext(GlobalContext);
-  const {
-    inputJob,
-    setInputJob,
-    fetchStatus,
-    setFetchStatus,
-
-    setCurrentId,
-  } = state;
+  const { inputJob, setInputJob, fetchStatus, setFetchStatus } = state;
   const {
     handleClikJobStatusChange,
     handleChangeInputNewJob,
@@ -42,6 +35,7 @@ const CreateJob = () => {
         .catch((err) => {});
     }
     // setCurrentId(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchStatus, setFetchStatus]);
 
   return (
